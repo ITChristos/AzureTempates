@@ -13,7 +13,7 @@
             "type": "Microsoft.Network/virtualNetworks",
             "apiVersion": "2020-05-01",
             "name": "[parameters('virtualNetworks_TYR_NETWORK_name')]",
-            "location": "westus2",
+            "location": "westus",
             "properties": {
                 "addressSpace": {
                     "addressPrefixes": [
