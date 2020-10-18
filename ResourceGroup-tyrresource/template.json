@@ -417,6 +417,7 @@
                 "osProfile": {
                     "computerName": "[parameters('virtualMachines_TYR_CL1_name')]",
                     "adminUsername": "tyr-admin",
+                    "adminPassword": "1qaz2wsx!QAZ@WSX",
                     "windowsConfiguration": {
                         "provisionVMAgent": true,
                         "enableAutomaticUpdates": true
@@ -475,6 +476,7 @@
                 "osProfile": {
                     "computerName": "[parameters('virtualMachines_TYR_FS_name')]",
                     "adminUsername": "tyr-admin",
+                    "adminPassword": "1qaz2wsx!QAZ@WSX",
                     "windowsConfiguration": {
                         "provisionVMAgent": true,
                         "enableAutomaticUpdates": true
@@ -532,6 +534,7 @@
                 "osProfile": {
                     "computerName": "[parameters('virtualMachines_TYR_PDC_name')]",
                     "adminUsername": "tyr-admin",
+                    "adminPassword": "1qaz2wsx!QAZ@WSX",
                     "windowsConfiguration": {
                         "provisionVMAgent": true,
                         "enableAutomaticUpdates": true
@@ -589,6 +592,7 @@
                 "osProfile": {
                     "computerName": "[parameters('virtualMachines_TYR_SDC_name')]",
                     "adminUsername": "tyr-admin",
+                    "adminPassword": "1qaz2wsx!QAZ@WSX",
                     "windowsConfiguration": {
                         "provisionVMAgent": true,
                         "enableAutomaticUpdates": true
