@@ -2,14 +2,79 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "virtualMachines_TYR_SDC_name": {
+        "location": {
+            "value": "westus"
+        },
+        "networkInterfaceName": {
+            "value": "tyr-sdc589"
+        },
+        "networkSecurityGroupName": {
+            "value": "TYR-SDC-nsg"
+        },
+        "networkSecurityGroupRules": {
+            "value": [
+                {
+                    "name": "RDP",
+                    "properties": {
+                        "priority": 300,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "3389"
+                    }
+                }
+            ]
+        },
+        "subnetName": {
+            "value": "Subnet1"
+        },
+        "virtualNetworkId": {
+            "value": "/subscriptions/9a24341c-41c0-4257-8e44-31d54ca020a5/resourceGroups/tyrresource/providers/Microsoft.Network/virtualNetworks/TYR-NETWORK"
+        },
+        "virtualMachineName": {
+            "value": "TYR-SDC"
+        },
+        "virtualMachineComputerName": {
+            "value": "TYR-SDC"
+        },
+        "virtualMachineRG": {
+            "value": "tyrresource"
+        },
+        "osDiskType": {
+            "value": "Standard_LRS"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_DS1_v2"
+        },
+        "adminUsername": {
+            "value": "tyr-admin"
+        },
+        "adminPassword": {
             "value": null
         },
-        "disks_TYR_SDC_OsDisk_1_b620fa0ec09e4cf68617bca795db9413_externalid": {
-            "value": null
+        "patchMode": {
+            "value": "AutomaticByOS"
         },
-        "networkInterfaces_tyr_sdc456_externalid": {
-            "value": null
+        "autoShutdownStatus": {
+            "value": "Enabled"
+        },
+        "autoShutdownTime": {
+            "value": "19:00"
+        },
+        "autoShutdownTimeZone": {
+            "value": "Pacific Standard Time"
+        },
+        "autoShutdownNotificationStatus": {
+            "value": "Enabled"
+        },
+        "autoShutdownNotificationLocale": {
+            "value": "en"
+        },
+        "autoShutdownNotificationEmail": {
+            "value": "christos.panas@outlook.com"
         }
     }
 }
