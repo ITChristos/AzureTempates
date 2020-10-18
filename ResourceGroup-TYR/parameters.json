@@ -1,0 +1,66 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "virtualMachines_TYR_FS_name": {
+            "value": null
+        },
+        "virtualMachines_TYR_CL1_name": {
+            "value": null
+        },
+        "virtualMachines_Tyr_PDC_name": {
+            "value": null
+        },
+        "virtualMachines_TYR_SDC_name": {
+            "value": null
+        },
+        "bastionHosts_TYR_BASTION_name": {
+            "value": null
+        },
+        "networkInterfaces_tyr_fs102_name": {
+            "value": null
+        },
+        "virtualNetworks_TYR_NETWORK_name": {
+            "value": null
+        },
+        "networkInterfaces_tyr_cl1821_name": {
+            "value": null
+        },
+        "networkInterfaces_tyr_pdc152_name": {
+            "value": null
+        },
+        "networkInterfaces_tyr_sdc456_name": {
+            "value": null
+        },
+        "publicIPAddresses_TYR_NETWORK_ip_name": {
+            "value": null
+        },
+        "networkSecurityGroups_TYR_CL1_nsg_name": {
+            "value": null
+        },
+        "networkSecurityGroups_TYRFSnsg903_name": {
+            "value": null
+        },
+        "networkSecurityGroups_Tyr_PDC_nsg_name": {
+            "value": null
+        },
+        "networkSecurityGroups_TYR_SDC_nsg_name": {
+            "value": null
+        },
+        "publicIPAddresses_TYRNETWORKip819_name": {
+            "value": null
+        },
+        "schedules_shutdown_computevm_tyr_fs_name": {
+            "value": null
+        },
+        "schedules_shutdown_computevm_tyr_cl1_name": {
+            "value": null
+        },
+        "schedules_shutdown_computevm_tyr_pdc_name": {
+            "value": null
+        },
+        "schedules_shutdown_computevm_tyr_sdc_name": {
+            "value": null
+        }
+    }
+}

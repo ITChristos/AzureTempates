@@ -1,0 +1,15 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "virtualMachines_TYR_SDC_name": {
+            "value": null
+        },
+        "disks_TYR_SDC_OsDisk_1_b620fa0ec09e4cf68617bca795db9413_externalid": {
+            "value": null
+        },
+        "networkInterfaces_tyr_sdc456_externalid": {
+            "value": null
+        }
+    }
+}

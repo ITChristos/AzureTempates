@@ -1,0 +1,15 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "virtualMachines_TYR_CL1_name": {
+            "value": null
+        },
+        "disks_TYR_CL1_OsDisk_1_1e22524695c44496b2809c10288823cf_externalid": {
+            "value": null
+        },
+        "networkInterfaces_tyr_cl1821_externalid": {
+            "value": null
+        }
+    }
+}
