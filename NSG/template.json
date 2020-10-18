@@ -1,0 +1,27 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "networkSecurityGroupName": {
+            "type": "String",
+            "metadata": {
+                "description": "This is the name of the network security group"
+            }
+        },
+        "location": {
+            "type": "String",
+            "metadata": {
+                "description": "Location where the network security group resource will be created."
+            }
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "apiVersion": "2019-02-01",
+            "name": "[parameters('networkSecurityGroupName')]",
+            "location": "[parameters('location')]",
+            "tags": {}
+        }
+    ]
+}
