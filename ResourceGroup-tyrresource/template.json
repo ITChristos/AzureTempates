@@ -408,8 +408,7 @@
                         "createOption": "FromImage",
                         "caching": "ReadWrite",
                         "managedDisk": {
-                            "storageAccountType": "Standard_LRS",
-                            "id": "[resourceId('Microsoft.Compute/disks', concat(parameters('virtualMachines_TYR_CL1_name'), '_OsDisk_1_0c4438b787ba419696225db2e033ffdd'))]"
+                            "storageAccountType": "Standard_LRS"
                         },
                         "diskSizeGB": 127
                     },
@@ -468,8 +467,7 @@
                         "createOption": "FromImage",
                         "caching": "ReadWrite",
                         "managedDisk": {
-                            "storageAccountType": "Standard_LRS",
-                            "id": "[resourceId('Microsoft.Compute/disks', concat(parameters('virtualMachines_TYR_FS_name'), '_OsDisk_1_8c6f139ca1014e6798dfe35a0f117ed3'))]"
+                            "storageAccountType": "Standard_LRS"
                         },
                         "diskSizeGB": 127
                     },
@@ -527,8 +525,7 @@
                         "createOption": "FromImage",
                         "caching": "ReadWrite",
                         "managedDisk": {
-                            "storageAccountType": "Standard_LRS",
-                            "id": "[resourceId('Microsoft.Compute/disks', concat(parameters('virtualMachines_TYR_PDC_name'), '_OsDisk_1_4617bb2b4aaf48bf8318ca9ab5ff858a'))]"
+                            "storageAccountType": "Standard_LRS"
                         },
                         "diskSizeGB": 127
                     },
@@ -586,8 +583,7 @@
                         "createOption": "FromImage",
                         "caching": "ReadWrite",
                         "managedDisk": {
-                            "storageAccountType": "Standard_LRS",
-                            "id": "[resourceId('Microsoft.Compute/disks', concat(parameters('virtualMachines_TYR_SDC_name'), '_OsDisk_1_a602621132454a82abc01ee0c972ebe6'))]"
+                            "storageAccountType": "Standard_LRS"
                         },
                         "diskSizeGB": 127
                     },
