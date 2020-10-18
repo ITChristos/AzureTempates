@@ -1,0 +1,75 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "virtualMachines_TYR_PDC_name": {
+            "defaultValue": "TYR-PDC",
+            "type": "String"
+        },
+        "disks_TYR_PDC_OsDisk_1_174208579a9244e38d0b97ac0193ff1f_externalid": {
+            "defaultValue": "/subscriptions/9a24341c-41c0-4257-8e44-31d54ca020a5/resourceGroups/TYRRESOURCE/providers/Microsoft.Compute/disks/TYR-PDC_OsDisk_1_174208579a9244e38d0b97ac0193ff1f",
+            "type": "String"
+        },
+        "networkInterfaces_tyr_pdc789_externalid": {
+            "defaultValue": "/subscriptions/9a24341c-41c0-4257-8e44-31d54ca020a5/resourceGroups/tyrresource/providers/Microsoft.Network/networkInterfaces/tyr-pdc789",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Compute/virtualMachines",
+            "apiVersion": "2019-07-01",
+            "name": "[parameters('virtualMachines_TYR_PDC_name')]",
+            "location": "westus",
+            "properties": {
+                "hardwareProfile": {
+                    "vmSize": "Standard_DS1_v2"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "MicrosoftWindowsServer",
+                        "offer": "WindowsServer",
+                        "sku": "2016-Datacenter",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "osType": "Windows",
+                        "name": "[concat(parameters('virtualMachines_TYR_PDC_name'), '_OsDisk_1_174208579a9244e38d0b97ac0193ff1f')]",
+                        "createOption": "FromImage",
+                        "caching": "ReadWrite",
+                        "managedDisk": {
+                            "storageAccountType": "Standard_LRS",
+                            "id": "[parameters('disks_TYR_PDC_OsDisk_1_174208579a9244e38d0b97ac0193ff1f_externalid')]"
+                        },
+                        "diskSizeGB": 127
+                    },
+                    "dataDisks": []
+                },
+                "osProfile": {
+                    "computerName": "[parameters('virtualMachines_TYR_PDC_name')]",
+                    "adminUsername": "tyr-admin",
+                    "windowsConfiguration": {
+                        "provisionVMAgent": true,
+                        "enableAutomaticUpdates": true
+                    },
+                    "secrets": [],
+                    "allowExtensionOperations": true,
+                    "requireGuestProvisionSignal": true
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[parameters('networkInterfaces_tyr_pdc789_externalid')]"
+                        }
+                    ]
+                },
+                "diagnosticsProfile": {
+                    "bootDiagnostics": {
+                        "enabled": true
+                    }
+                }
+            }
+        }
+    ]
+}
