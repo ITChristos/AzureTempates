@@ -170,7 +170,7 @@
         },
         {
             "type": "Microsoft.Storage/storageAccounts",
-            "apiVersion": "2020-08-01-preview",
+            "apiVersion": "2019-06-01",
             "name": "[parameters('storageAccounts_tyrsto_name')]",
             "location": "westus",
             "sku": {
@@ -321,7 +321,7 @@
         },
         {
             "type": "Microsoft.Storage/storageAccounts/blobServices",
-            "apiVersion": "2020-08-01-preview",
+            "apiVersion": "2019-06-01",
             "name": "[concat(parameters('storageAccounts_tyrsto_name'), '/default')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_tyrsto_name'))]"
@@ -341,7 +341,7 @@
         },
         {
             "type": "Microsoft.Storage/storageAccounts/fileServices",
-            "apiVersion": "2020-08-01-preview",
+            "apiVersion": "2019-06-01",
             "name": "[concat(parameters('storageAccounts_tyrsto_name'), '/default')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_tyrsto_name'))]"
@@ -358,7 +358,7 @@
         },
         {
             "type": "Microsoft.Storage/storageAccounts/queueServices",
-            "apiVersion": "2020-08-01-preview",
+            "apiVersion": "2019-06-01",
             "name": "[concat(parameters('storageAccounts_tyrsto_name'), '/default')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_tyrsto_name'))]"
@@ -371,7 +371,7 @@
         },
         {
             "type": "Microsoft.Storage/storageAccounts/tableServices",
-            "apiVersion": "2020-08-01-preview",
+            "apiVersion": "2019-06-01",
             "name": "[concat(parameters('storageAccounts_tyrsto_name'), '/default')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_tyrsto_name'))]"
@@ -757,7 +757,7 @@
         },
         {
             "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
-            "apiVersion": "2020-08-01-preview",
+            "apiVersion": "2019-06-01",
             "name": "[concat(parameters('storageAccounts_tyrsto_name'), '/default/bootdiagnostics-tyrcl1-74d0827f-8158-4399-86ca-27e772b55c4f')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Storage/storageAccounts/blobServices', parameters('storageAccounts_tyrsto_name'), 'default')]",
@@ -771,7 +771,7 @@
         },
         {
             "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
-            "apiVersion": "2020-08-01-preview",
+            "apiVersion": "2019-06-01",
             "name": "[concat(parameters('storageAccounts_tyrsto_name'), '/default/bootdiagnostics-tyrfs-3cf66a64-a80b-483d-8fcf-06e1da66fcf3')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Storage/storageAccounts/blobServices', parameters('storageAccounts_tyrsto_name'), 'default')]",
@@ -785,7 +785,7 @@
         },
         {
             "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
-            "apiVersion": "2020-08-01-preview",
+            "apiVersion": "2019-06-01",
             "name": "[concat(parameters('storageAccounts_tyrsto_name'), '/default/bootdiagnostics-tyrpdc-c76d17dd-0d10-4d86-9117-3d4862256e4d')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Storage/storageAccounts/blobServices', parameters('storageAccounts_tyrsto_name'), 'default')]",
@@ -799,7 +799,7 @@
         },
         {
             "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
-            "apiVersion": "2020-08-01-preview",
+            "apiVersion": "2019-06-01",
             "name": "[concat(parameters('storageAccounts_tyrsto_name'), '/default/bootdiagnostics-tyrsdc-cc379852-3244-49de-ae2b-2d43b361270d')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Storage/storageAccounts/blobServices', parameters('storageAccounts_tyrsto_name'), 'default')]",
