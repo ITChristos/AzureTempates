@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "networkSecurityGroupName": {
-            "value": "tyr-nsg"
+            "value": "tyr-NSG"
         },
         "location": {
             "value": "westus"
