@@ -1,0 +1,39 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "virtualMachines_TYR_FS_name": {
+            "value": null
+        },
+        "storageAccounts_tyrsto_name": {
+            "value": null
+        },
+        "virtualMachines_TYR_CL1_name": {
+            "value": null
+        },
+        "virtualMachines_TYR_PDC_name": {
+            "value": null
+        },
+        "virtualMachines_TYR_SDC_name": {
+            "value": null
+        },
+        "networkInterfaces_tyr_fs191_name": {
+            "value": null
+        },
+        "virtualNetworks_TYR_NETWORK_name": {
+            "value": null
+        },
+        "networkInterfaces_tyr_cl1191_name": {
+            "value": null
+        },
+        "networkInterfaces_tyr_pdc263_name": {
+            "value": null
+        },
+        "networkInterfaces_tyr_sdc396_name": {
+            "value": null
+        },
+        "networkSecurityGroups_tyr_NSG_name": {
+            "value": null
+        }
+    }
+}
