@@ -20,9 +20,6 @@ $templateUri = "https://raw.githubusercontent.com/Azure/azure-quickstart-templat
 New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateUri $templateUri -Location $location
 
 
-
-
-
 #Lock Resources (prevents other users in org from accidentally deleting or modifying critical resources)
 $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
 $storageAccountName = Read-Host -Prompt "Enter the storage account name"

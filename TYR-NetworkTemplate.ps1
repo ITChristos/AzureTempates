@@ -1,10 +1,16 @@
-$resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
+#Install AzureRM if needed (VSC only)
+Get-Module -Name Az
+Install-Module Az -AllowClobber
+Connect-AzureRmAccount
+Get-AzureRmTenant
+Enable-AzureRmContextAutosave
+Get-AzureRmContext
+
+$resourceGroupName = Read-Host -Prompt "Enter the Resource Group name(i.e. tyrresource)"
 $location = Read-Host -Prompt "Enter the location (i.e. westus)"
 
 # Create New Resource Group (Unless adding to existing resource group)
-New-AzureRmResourceGroup
-    -Name $resourceGroupName
-    -Location $location
+New-AzureRmResourceGroup -Name $resourceGroupName -Location $location
 #    [-Tag <Hashtable>]
 #    [-Force]
 #    [-ApiVersion <String>]
@@ -15,25 +21,24 @@ New-AzureRmResourceGroup
 #    [<CommonParameters>]
 
 # Create the storage account.
+$storageAccountName = Read-Host -Prompt "Enter the storage account name (3-24 characters, numbers/lowercase letters only)(i.e. tyrsto)"
+$storageAccount = New-AzStorageAccount -ResourceGroupName $resourceGroupName -Name $storageAccountName -Location $location -SkuName "Standard_LRS"
 
-$storageAccountName = Read-Host -Prompt "Enter the storage account name (3-24 characters, numbers/lowercase letters only"
-$storageAccount = New-AzStorageAccount -ResourceGroupName $resourceGroupName `
-    -Name $storageAccountName `
-    -Location $location `
-    -SkuName "Standard_LRS"
+#Deploy Virtual Network
+$templateUri = "https://raw.githubusercontent.com/ITChristos/AzureTemplates/main/TYR-NETWORK/template.json"
+New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateUri $templateUri
 
-# Retrieve the context.
-$ctx = $storageAccount.Context
+#Deploy Resource Group Objects
+$tyrresourcetemplateUri = "https://raw.githubusercontent.com/ITChristos/AzureTemplates/main/ResourceGroup-tyrresource/template.json"
+New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateUri $tyrresourcetemplateUri
 
-#Deploy template
-$resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
-$location = Read-Host -Prompt "Enter the location (i.e. centralus)"
-$templateUri = "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-storage-account-create/azuredeploy.json"
-New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateUri $templateUri -Location $location
+#VMadd Template
+# $___________templateUri = ""
+# New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateUri $___________templateUri
 
-
-
-
+#Deploy Network Security Group
+$NSGtemplateUri = "https://raw.githubusercontent.com/ITChristos/AzureTemplates/main/NSG/template.json"
+New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateUri $NSGtemplateUri
 
 #Lock Resources (prevents other users in org from accidentally deleting or modifying critical resources)
 $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
@@ -67,3 +72,4 @@ $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
 $storageAccountName = Read-Host -Prompt "Enter the storage account name"
 
 Remove-AzStorageAccount -ResourceGroupName $resourceGroupName -AccountName $storageAccountName
+Remove-Az
