@@ -1,2 +1,2 @@
-# AzureTempates
+# AzureTemplates
 Azure Resource Module Templates
